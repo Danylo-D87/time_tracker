@@ -105,36 +105,36 @@ async function main() {
 
     const entries: EntryDef[] = [
         // ── Website Redesign (7 entries) ────────────────────────
-        { daysAgo: 0, startH: 9,  startM: 0,  endH: 10, endM: 30, projectId: web!.id, taskName: "Design homepage mockup" },
+        { daysAgo: 0, startH: 9, startM: 0, endH: 10, endM: 30, projectId: web!.id, taskName: "Design homepage mockup" },
         { daysAgo: 0, startH: 10, startM: 45, endH: 12, endM: 15, projectId: web!.id, taskName: "Create color palette & typography" },
-        { daysAgo: 1, startH: 9,  startM: 0,  endH: 11, endM: 0,  projectId: web!.id, taskName: "Implement responsive header" },
-        { daysAgo: 1, startH: 13, startM: 0,  endH: 15, endM: 30, projectId: web!.id, taskName: "Build contact form" },
-        { daysAgo: 2, startH: 10, startM: 0,  endH: 12, endM: 0,  projectId: web!.id, taskName: "Set up CMS integration" },
-        { daysAgo: 3, startH: 14, startM: 0,  endH: 16, endM: 45, projectId: web!.id, taskName: "Optimize images & assets" },
-        { daysAgo: 4, startH: 9,  startM: 30, endH: 11, endM: 0,  projectId: web!.id, taskName: "Cross-browser testing" },
+        { daysAgo: 1, startH: 9, startM: 0, endH: 11, endM: 0, projectId: web!.id, taskName: "Implement responsive header" },
+        { daysAgo: 1, startH: 13, startM: 0, endH: 15, endM: 30, projectId: web!.id, taskName: "Build contact form" },
+        { daysAgo: 2, startH: 10, startM: 0, endH: 12, endM: 0, projectId: web!.id, taskName: "Set up CMS integration" },
+        { daysAgo: 3, startH: 14, startM: 0, endH: 16, endM: 45, projectId: web!.id, taskName: "Optimize images & assets" },
+        { daysAgo: 4, startH: 9, startM: 30, endH: 11, endM: 0, projectId: web!.id, taskName: "Cross-browser testing" },
 
         // ── Mobile App (6 entries) ──────────────────────────────
-        { daysAgo: 0, startH: 13, startM: 0,  endH: 14, endM: 45, projectId: mobile!.id, taskName: "Wireframe main screens" },
-        { daysAgo: 0, startH: 15, startM: 0,  endH: 16, endM: 30, projectId: mobile!.id, taskName: "Implement login screen" },
+        { daysAgo: 0, startH: 13, startM: 0, endH: 14, endM: 45, projectId: mobile!.id, taskName: "Wireframe main screens" },
+        { daysAgo: 0, startH: 15, startM: 0, endH: 16, endM: 30, projectId: mobile!.id, taskName: "Implement login screen" },
         { daysAgo: 1, startH: 11, startM: 15, endH: 12, endM: 45, projectId: mobile!.id, taskName: "Build navigation component" },
-        { daysAgo: 2, startH: 13, startM: 0,  endH: 15, endM: 0,  projectId: mobile!.id, taskName: "Push notifications setup" },
-        { daysAgo: 3, startH: 9,  startM: 0,  endH: 11, endM: 30, projectId: mobile!.id, taskName: "Local storage caching" },
-        { daysAgo: 4, startH: 13, startM: 0,  endH: 15, endM: 15, projectId: mobile!.id, taskName: "Unit tests for auth module" },
+        { daysAgo: 2, startH: 13, startM: 0, endH: 15, endM: 0, projectId: mobile!.id, taskName: "Push notifications setup" },
+        { daysAgo: 3, startH: 9, startM: 0, endH: 11, endM: 30, projectId: mobile!.id, taskName: "Local storage caching" },
+        { daysAgo: 4, startH: 13, startM: 0, endH: 15, endM: 15, projectId: mobile!.id, taskName: "Unit tests for auth module" },
 
         // ── API Development (6 entries) ─────────────────────────
-        { daysAgo: 0, startH: 16, startM: 45, endH: 18, endM: 0,  projectId: api!.id, taskName: "Create REST endpoints" },
+        { daysAgo: 0, startH: 16, startM: 45, endH: 18, endM: 0, projectId: api!.id, taskName: "Create REST endpoints" },
         { daysAgo: 1, startH: 15, startM: 45, endH: 17, endM: 30, projectId: api!.id, taskName: "Database schema design" },
-        { daysAgo: 2, startH: 15, startM: 15, endH: 17, endM: 0,  projectId: api!.id, taskName: "JWT authentication middleware" },
+        { daysAgo: 2, startH: 15, startM: 15, endH: 17, endM: 0, projectId: api!.id, taskName: "JWT authentication middleware" },
         { daysAgo: 2, startH: 17, startM: 15, endH: 18, endM: 30, projectId: api!.id, taskName: "Rate limiting implementation" },
         { daysAgo: 3, startH: 11, startM: 45, endH: 13, endM: 30, projectId: api!.id, taskName: "Write API documentation" },
         { daysAgo: 4, startH: 15, startM: 30, endH: 17, endM: 45, projectId: api!.id, taskName: "Integration tests" },
 
         // ── Marketing Campaign (5 entries) ──────────────────────
-        { daysAgo: 1, startH: 8,  startM: 30, endH: 9,  endM: 0,  projectId: marketing!.id, taskName: "Competitor analysis" },
-        { daysAgo: 2, startH: 8,  startM: 30, endH: 10, endM: 0,  projectId: marketing!.id, taskName: "Content calendar planning" },
-        { daysAgo: 3, startH: 16, startM: 45, endH: 18, endM: 0,  projectId: marketing!.id, taskName: "Design social media graphics" },
+        { daysAgo: 1, startH: 8, startM: 30, endH: 9, endM: 0, projectId: marketing!.id, taskName: "Competitor analysis" },
+        { daysAgo: 2, startH: 8, startM: 30, endH: 10, endM: 0, projectId: marketing!.id, taskName: "Content calendar planning" },
+        { daysAgo: 3, startH: 16, startM: 45, endH: 18, endM: 0, projectId: marketing!.id, taskName: "Design social media graphics" },
         { daysAgo: 4, startH: 11, startM: 15, endH: 12, endM: 45, projectId: marketing!.id, taskName: "Write blog post drafts" },
-        { daysAgo: 4, startH: 8,  startM: 30, endH: 9,  endM: 15, projectId: marketing!.id, taskName: "Set up email automation" },
+        { daysAgo: 4, startH: 8, startM: 30, endH: 9, endM: 15, projectId: marketing!.id, taskName: "Set up email automation" },
     ];
 
     for (const e of entries) {

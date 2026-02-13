@@ -58,8 +58,7 @@ export default function TrackerPage() {
         if (result) {
             addToast("success", `Timer started: ${taskName.trim()}`);
             setTaskName("");
-            // Reload entries to show the new running entry
-            setTimeout(reload, 300);
+            reload();
         }
     }, [taskName, projectId, timer, reload, addToast]);
 
@@ -68,7 +67,7 @@ export default function TrackerPage() {
         if (stopped) {
             addToast("success", "Timer stopped");
         }
-        setTimeout(reload, 300);
+        reload();
     }, [timer, reload, addToast]);
 
     // ── Entry actions ──────────────────────────────────────────

@@ -172,9 +172,8 @@ npm install
 
 1. Go to [supabase.com](https://supabase.com) → create a new project
 2. Navigate to **Settings → Database → Connection string**
-3. Copy the **pooled** connection string (port `6543`) → this is your `DATABASE_URL`
-4. Copy the **direct** connection string (port `5432`) → this is your `DIRECT_URL`
-5. Navigate to **Settings → API** → copy `Project URL` and `anon key`
+3. Copy the **pooled** connection string (port `6543`)
+4. Use it for **both** `DATABASE_URL` (with `?pgbouncer=true`) and `DIRECT_URL` (without the param)
 
 ### 4. Configure environment variables
 
@@ -186,10 +185,10 @@ Edit `.env` with your Supabase credentials:
 
 ```env
 DATABASE_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres?pgbouncer=true"
-DIRECT_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:5432/postgres"
-NEXT_PUBLIC_SUPABASE_URL="https://[REF].supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+DIRECT_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres"
 ```
+
+> ⚠️ **Important:** Use port **6543** (Supavisor pooler) for **both** URLs. The direct port `5432` often hangs on Supabase free tier and is not needed for this project.
 
 ### 5. Push the database schema
 
@@ -423,9 +422,8 @@ npm install
 
 1. Зайдіть на [supabase.com](https://supabase.com) → створіть новий проєкт
 2. Перейдіть у **Settings → Database → Connection string**
-3. Скопіюйте **pooled** connection string (порт `6543`) → це ваш `DATABASE_URL`
-4. Скопіюйте **direct** connection string (порт `5432`) → це ваш `DIRECT_URL`
-5. Перейдіть у **Settings → API** → скопіюйте `Project URL` та `anon key`
+3. Скопіюйте **pooled** connection string (порт `6543`)
+4. Використайте його для **обох** `DATABASE_URL` (з `?pgbouncer=true`) та `DIRECT_URL` (без цього параметра)
 
 ### 4. Налаштуйте змінні оточення
 
@@ -437,10 +435,10 @@ cp .env.example .env
 
 ```env
 DATABASE_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres?pgbouncer=true"
-DIRECT_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:5432/postgres"
-NEXT_PUBLIC_SUPABASE_URL="https://[REF].supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+DIRECT_URL="postgresql://postgres.[REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres"
 ```
+
+> ⚠️ **Важливо:** Використовуйте порт **6543** (Supavisor pooler) для **обох** URL. Прямий порт `5432` часто зависає на безкоштовному tier Supabase і для цього проєкту не потрібен.
 
 ### 5. Застосуйте схему бази даних
 
