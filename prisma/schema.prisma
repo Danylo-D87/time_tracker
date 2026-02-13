@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Project {
+  id          String      @id @default(cuid())
+  name        String
+  color       String      @default("#3B82F6")
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  timeEntries TimeEntry[]
+}
+
+model TaskName {
+  id          String      @id @default(cuid())
+  name        String      @unique
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  timeEntries TimeEntry[]
+}
+
+model TimeEntry {
+  id         String    @id @default(cuid())
+  startTime  DateTime
+  endTime    DateTime?
+  duration   Int?
+  projectId  String
+  project    Project   @relation(fields: [projectId], references: [id])
+  taskNameId String
+  taskName   TaskName  @relation(fields: [taskNameId], references: [id])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([projectId])
+  @@index([taskNameId])
+  @@index([startTime])
+  @@index([endTime])
+}
