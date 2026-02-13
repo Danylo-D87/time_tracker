@@ -61,13 +61,18 @@ export function TimeEntryList({
             </div>
 
             {/* Entry list */}
-            {entries.map((entry) => (
-                <TimeEntryItem
+            {entries.map((entry, index) => (
+                <div
                     key={entry.id}
-                    entry={entry}
-                    onEdit={onEdit}
-                    onDelete={onDelete}
-                />
+                    className="animate-in fade-in slide-in-from-bottom-2 fill-mode-both"
+                    style={{ animationDelay: `${index * 50}ms`, animationDuration: "300ms" }}
+                >
+                    <TimeEntryItem
+                        entry={entry}
+                        onEdit={onEdit}
+                        onDelete={onDelete}
+                    />
+                </div>
             ))}
         </div>
     );

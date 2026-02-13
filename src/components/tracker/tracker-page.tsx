@@ -281,15 +281,20 @@ export default function TrackerPage() {
                             onDelete={handleDeleteRequest}
                         />
                     ) : (
-                        Array.from(groupedEntries.values()).map((group) => (
-                            <ProjectGroup
+                        Array.from(groupedEntries.values()).map((group, index) => (
+                            <div
                                 key={group.project.id}
-                                project={group.project}
-                                entries={group.entries}
-                                totalDuration={group.totalDuration}
-                                onEdit={handleEdit}
-                                onDelete={handleDeleteRequest}
-                            />
+                                className="animate-in fade-in slide-in-from-bottom-2 fill-mode-both"
+                                style={{ animationDelay: `${index * 70}ms`, animationDuration: "300ms" }}
+                            >
+                                <ProjectGroup
+                                    project={group.project}
+                                    entries={group.entries}
+                                    totalDuration={group.totalDuration}
+                                    onEdit={handleEdit}
+                                    onDelete={handleDeleteRequest}
+                                />
+                            </div>
                         ))
                     )}
                 </div>

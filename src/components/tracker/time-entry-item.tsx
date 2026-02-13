@@ -26,8 +26,7 @@ export function TimeEntryItem({ entry, onEdit, onDelete }: TimeEntryItemProps) {
     return (
         <div
             className={cn(
-                "group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 transition-all duration-200",
-                "animate-in fade-in slide-in-from-bottom-1",
+                "group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 transition-all duration-300",
                 isActive && "border-white/15",
             )}
         >
